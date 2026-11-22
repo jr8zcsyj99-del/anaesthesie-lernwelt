@@ -1,14 +1,9 @@
-# anaesthesie-lernwelt
+# Anästhesie Lernwelt · Version 1.1
 
-## Lernbibliothek 1.0
+Die kompakte 6-Karten-Fassung wird durch den wiedergefundenen ausführlichen Arbeitsstand ersetzt. Genau 22 ursprüngliche Themen bleiben erhalten. 21 Themen enthalten je 20 ausführliche Lernkarten; neuromuskuläres Monitoring enthält seine 38 Karten. Insgesamt 458 Karten mit Praxisbezügen und Quellen. Die Fortbildungen enthalten den vollständigen wiedergefundenen Erklärungstext und die zusätzliche Grundlagenübersicht. Reine Textlesezeit ist je Thema nach Wortzahl / 180 ausgewiesen; Lernkarten sind zusätzliche Lernzeit. Kein pauschales Versprechen von 30 Minuten reinem Lesetext.
 
-22 ursprüngliche Themen mit je einer kompakten strukturierten Fortbildung, sechs Lernkarten und einem neuen PNG-Pocketguide (1080 × 1920). Die vorhandenen Originaldateien liegen unverändert unter `originale/`; ihre SHA-256-Prüfsummen stehen in `data/originals-sha256.json`. Alte Bildguides sind Archivmaterial, keine geprüften Dosierungsanleitungen.
+22 neue farbige Pocketguides in Grün, Blau, Gold und Koralle: 1080 × 1920 PNG, mit Lernbrücke. Auf der Website wird dieselbe PNG-Datei wie beim Download angezeigt; ein zugänglicher Text ist zusätzlich ausklappbar. Historische Originale und ihre Prüfsummen bleiben unverändert. URL, Manifest, Icons und lokal gespeicherte Favoriten/Lesestände bleiben erhalten.
 
-Inhalte: `data/build_content.py`. Build: `python3 data/build_site.py` (Python 3, Pillow und DejaVu Sans). Der Build erzeugt `data/topics.json`, bindet die Inhalte in `index.html` ein und rendert alle 22 Pocketguides mit Überlaufkontrollen. `app.js` und `styles.css` sind direkt statisch nutzbar. Keine kostenpflichtige API und kein Backend.
+Build: `python3 data/build_site.py` (Python 3, Pillow, DejaVu Sans). Redaktionelle Eingaben: `data/detailed-topics.json` und `data/lessons/*.html`. Build prüft 22 Themen, 458 Karten und den Textüberlauf aller 22 PNGs. Die vollständigen Inhalte sind für Offline-Nutzung und HTML-Export im Dokument eingebettet. Service-Worker-Cache v3 lädt die neue Fassung; Originale bleiben im Archiv.
 
-Online-Abgleich der verlinkten medizinischen Quellen: 22.11.2026. Volltextzugriff und Evidenzgrenzen sind in den Themen benannt, soweit relevant. Fiktive Praxisfälle dienen dem Lernen. Keine klinisch freigegebene SOP; keine erfundenen Lehrbuchseiten oder Zitate.
-
-Prüfung: 22 eindeutige Themen, 154 Abschnitte, 132 Karten, 22 PNGs mit exaktem 9:16-Verhältnis; sämtliche internen Dateiverweise und Originalprüfsummen kontrolliert. Browser-Stichproben: Suche, Kategorien, Favoriten, Kartenwechsel, Formate, HTML-Export und Offline-Speicher erfolgreich. Ein langer Browserdurchlauf wurde am Zeitlimit unterbrochen. Kein Test auf einem physischen iPhone und kein Flugmodustest.
-
-Veröffentlichung im bestehenden GitHub-Pages-Repository. Seitenadresse, Manifest und iPhone-Icons bleiben unverändert.
-Digitale Lernbibliothek für die Fachweiterbildung Anästhesiepflege
+Quellenstände und Zugriffsgrenzen stehen in den Fortbildungen. Redaktionelles Lernmaterial, keine klinisch freigegebene SOP. Angaben zu Dosierungen sind an den jeweiligen Leitlinien-/Präparatkontext gebunden. Die historische TOF-Originalgrafik wird ausdrücklich als Archivmaterial behandelt.

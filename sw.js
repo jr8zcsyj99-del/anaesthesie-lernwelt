@@ -1,4 +1,4 @@
-const CACHE='lernwelt-v2';
+const CACHE='lernwelt-v3-detailed';
 const CORE=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icons/clinical-180.png','./icons/clinical-192.png','./icons/clinical-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('lernwelt-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
