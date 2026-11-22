@@ -1,5 +1,5 @@
-const CACHE='lernwelt-v3.1-detailed';
-const CORE=['./','./index.html','./styles.css?v=1.1.1','./app.js?v=1.1.1','./manifest.webmanifest','./icons/clinical-180.png','./icons/clinical-192.png','./icons/clinical-512.png'];
+const CACHE='lernwelt-v4-pocketguide';
+const CORE=['./','./index.html','./styles.css?v=1.1.1','./guides/01-morning-v4.svg?v=4','./manifest.webmanifest','./icons/clinical-180.png','./icons/clinical-192.png','./icons/clinical-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('lernwelt-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;event.respondWith(fetch(event.request,{cache:'no-cache'}).then(response=>{if(response.ok){const clone=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(event.request,clone)));}return response;}).catch(async()=>{const hit=await caches.match(event.request);if(hit)return hit;const url=new URL(event.request.url),root=new URL('./',self.location.href);if(event.request.mode==='navigate'&&(url.pathname===root.pathname||url.pathname===root.pathname+'index.html'))return(await caches.match('./index.html'))||Response.error();return Response.error();}));});
